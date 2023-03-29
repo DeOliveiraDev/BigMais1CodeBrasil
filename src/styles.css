@@ -1,0 +1,19 @@
+.imagemParticipante {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  margin-right: 6px;
+}
+
+.container {
+  position: relative;
+}
+
+.container__participantes {
+  position: absolute;
+  top: 40px;
+}
+
+.container__participantes img {
+  box-shadow: 1px 8px 10px 10px #fff;
+}
