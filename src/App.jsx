@@ -1,58 +1,60 @@
 import logo from './assets/Mais1CodeLogo.svg'
-import logoPretoBranco from './assets/Mais1CodeLogoPretoBranco.svg'
+import logoBlackAndWhite from './assets/Mais1CodeBlackWhiteLogo.svg'
 import { useState } from 'react'
-import './styles.css'
+import './styles.scss'
 
 function App() {
   const [avatarHover, setAvatarHover] = useState('')
 
-  const participantes = [
+  const participants = [
     {
       id: 1,
-      nome: 'Eu',
-      imagem: 'https://github.com/DeOliveiraDev.png',
+      name: 'Vinícius',
+      avatar: 'https://github.com/DeOliveiraDev.png',
     },
     {
       id: 2,
-      nome: 'Eu de novo',
-      imagem: 'https://github.com/DeOliveiraDev.png',
+      name: 'Vinícius',
+      avatar: 'https://github.com/DeOliveiraDev.png',
     },
     {
       id: 3,
-      nome: 'Olha eu ai',
-      imagem: 'https://github.com/DeOliveiraDev.png',
+      name: 'Allan',
+      avatar: 'https://github.com/DeOliveiraDev.png',
     },
     {
       id: 4,
-      nome: 'Caraca, só dá eu',
-      imagem: 'https://github.com/DeOliveiraDev.png',
+      name: 'Matheus',
+      avatar: 'https://github.com/DeOliveiraDev.png',
     },
   ]
 
   return (
     <div>
       <header>
-        <div className="top">
-          <img src={logoPretoBranco} />
-          <h1>BIG MAIS1CODE BRASIL</h1>
+        <div className="headerTopContainer">
+          <img className="headerTopContainer__logo" src={logoBlackAndWhite} />
+          <h1 className="headerTopContainer__title">BIG MAIS1CODE BRASIL</h1>
         </div>
-        <div className="bottom">
+        <div className="headerBottomContainer">
           {avatarHover ? (
-            <p>{avatarHover}</p>
+            <p className="headerBottomContainer--name">{avatarHover}</p>
           ) : (
             <div>
-              <img className="imagemLogo" src={logo} />
+              <img src={logo} />
             </div>
           )}
-          <div className="bottom__participantes">
-            {participantes.map((participante) => {
+          <div className="headerBottomContainer__participants">
+            {participants.map((participant) => {
               return (
                 <img
-                  key={participante.id}
-                  onMouseEnter={() => setAvatarHover(participante.nome)}
+                  key={participant.id}
+                  onMouseEnter={() =>
+                    setAvatarHover(participant.name.toUpperCase())
+                  }
                   onMouseLeave={() => setAvatarHover('')}
-                  className="imagemParticipante"
-                  src={participante.imagem}
+                  className="headerBottomContainer__participants--avatar"
+                  src={participant.avatar}
                 />
               )
             })}
