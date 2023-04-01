@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .imagemParticipante {
   height: 50px;
   width: 50px;
@@ -5,15 +13,28 @@
   margin-right: 6px;
 }
 
-.container {
+header .top {
+  background-color: #6533e2;
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
-.container__participantes {
+header .top h1 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+header .bottom {
+  position: relative;
+}
+
+header .bottom__participantes {
   position: absolute;
   top: 40px;
 }
 
-.container__participantes img {
+header .bottom__participantes img {
   box-shadow: 1px 8px 10px 10px #fff;
 }
