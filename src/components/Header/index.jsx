@@ -9,23 +9,45 @@ export const Header = () => {
   const participants = [
     {
       id: 1,
-      name: 'Vinícius',
-      avatar: 'https://github.com/DeOliveiraDev.png',
+      name: 'Ana Santos',
+      status: 'ATIVO',
+      weekRole: null,
+      avatar: 'https://github.com/anikape.png',
     },
     {
       id: 2,
       name: 'Vinícius',
+      status: 'ATIVO',
+      weekRole: 'Anjo',
       avatar: 'https://github.com/DeOliveiraDev.png',
     },
     {
       id: 3,
-      name: 'Allan',
-      avatar: 'https://github.com/DeOliveiraDev.png',
+      name: 'Matheus',
+      status: 'ATIVO',
+      weekRole: 'Líder',
+      avatar: 'https://github.com/matheusmessora.png',
     },
     {
       id: 4,
-      name: 'Matheus',
-      avatar: 'https://github.com/DeOliveiraDev.png',
+      name: 'Allan',
+      status: null,
+      weekRole: null,
+      avatar: 'https://github.com/Allanpt.png',
+    },
+    {
+      id: 5,
+      name: 'Rauane',
+      status: 'ATIVO',
+      weekRole: null,
+      avatar: 'https://github.com/lRauane.png',
+    },
+    {
+      id: 6,
+      name: 'João Viktor',
+      status: 'ATIVO',
+      weekRole: null,
+      avatar: 'https://github.com/jjviktor.png',
     },
   ]
 
@@ -54,17 +76,37 @@ export const Header = () => {
           <div className={styles.headerBottomContainer__participants}>
             {participants.map((participant) => {
               return (
-                <img
-                  key={participant.id}
-                  onMouseEnter={() =>
-                    setAvatarHover(participant.name.toUpperCase())
-                  }
-                  onMouseLeave={() => setAvatarHover('')}
+                <div
                   className={
-                    styles['headerBottomContainer__participants--avatar']
+                    styles['headerBottomContainer__participants--align']
                   }
-                  src={participant.avatar}
-                />
+                >
+                  <div
+                    className={
+                      participant.status === null &&
+                      styles['headerBottomContainer__participants--removed']
+                    }
+                  >
+                    <img
+                      key={participant.id}
+                      onMouseEnter={() =>
+                        setAvatarHover(participant.name.toUpperCase())
+                      }
+                      onMouseLeave={() => setAvatarHover('')}
+                      className={
+                        styles['headerBottomContainer__participants--avatar']
+                      }
+                      src={participant.avatar}
+                    />
+                  </div>
+                  <p
+                    className={
+                      styles['headerBottomContainer__participants--weekrole']
+                    }
+                  >
+                    {participant?.weekRole}
+                  </p>
+                </div>
               )
             })}
           </div>

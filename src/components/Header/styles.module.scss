@@ -23,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 32px;
 
   &--name {
     background: linear-gradient(
@@ -42,13 +43,40 @@
   &__participants {
     position: absolute;
     top: 40px;
+    display: flex;
+    align-items: center;
+
+    &--align {
+      display: flex;
+      flex-direction: column;
+      height: 70px;
+    }
 
     &--avatar {
       height: 50px;
       width: 50px;
       border-radius: 100%;
-      margin-right: 6px;
+      margin-right: 3px;
+      margin-left: 3px;
       box-shadow: 1px 8px 10px 10px #fff;
+
+      &:hover {
+        height: 60px;
+        width: 60px;
+        transition: 0.3s;
+        margin: 0;
+      }
+    }
+
+    &--removed {
+      filter: grayscale(100%);
+    }
+
+    &--weekrole {
+      font-size: 10px;
+      font-weight: bolder;
+      text-align: center;
+      color: #6533e2;
     }
   }
 }
